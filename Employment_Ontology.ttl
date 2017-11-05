@@ -99,7 +99,7 @@ event:place rdfs:domain :EmploymentEvent ,
 ###  http://www.example.com/Example#SelfEmployed
 :SelfEmployed rdf:type owl:Class ;
               rdfs:subClassOf :WorkRelationship ;
-              rdfs:comment "Instance of emloyment wherethe individual is not employed by a company, and is their own boss" ;
+              rdfs:comment "Instance of employment where the individual is not employed by a company, and is their own boss" ;
               rdfs:label "Self Employed" .
 
 

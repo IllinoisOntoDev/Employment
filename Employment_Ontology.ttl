@@ -22,15 +22,15 @@
 @prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
 @base <http://purl.org/lis590OD/Fall17/Employment_Ontology> .
 
-<http://purl.org/lis590OD/Fall17/Employment_Ontology> rdf:type owl:Ontology ;
-                                                       owl:imports <http://purl.org/lis590od/Fall17/OrgRel> .
+<http://purl.org/lis590OD/Fall17/Employment_Ontology> rdf:type owl:Ontology .
 
 #################################################################
 #    Object Properties
 #################################################################
 
 ###  http://purl.org/NET/c4dm/event.owl#place
-event:place rdfs:domain event:Event .
+event:place rdf:type owl:ObjectProperty ;
+            rdfs:domain event:Event .
 
 
 ###  http://purl.org/lis590OD/Fall17/Employment_Ontology#EmploymentLocation
@@ -141,6 +141,14 @@ event:place rdfs:domain event:Event .
              rdfs:range :Employee .
 
 
+###  http://www.w3.org/2006/time#hasBeginning
+<http://www.w3.org/2006/time#hasBeginning> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2006/time#hasEnd
+<http://www.w3.org/2006/time#hasEnd> rdf:type owl:ObjectProperty .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -212,9 +220,21 @@ event:place rdfs:domain event:Event .
              rdfs:label "weeklyEmploymentHours"@en .
 
 
+###  http://www.w3.org/2006/time#hours
+<http://www.w3.org/2006/time#hours> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2006/time#inXSDgYearMonth
+<http://www.w3.org/2006/time#inXSDgYearMonth> rdf:type owl:DatatypeProperty .
+
+
 #################################################################
 #    Classes
 #################################################################
+
+###  http://purl.org/NET/c4dm/event.owl#Event
+event:Event rdf:type owl:Class .
+
 
 ###  http://purl.org/lis590OD/Fall17/Employment_Ontology#Employee
 :Employee rdf:type owl:Class ;
@@ -366,6 +386,30 @@ event:place rdfs:domain event:Event .
                   rdfs:subClassOf event:Event ;
                   rdfs:comment "A event relating a person and employment, but doesn't include an organization. Can include unemployment and self employment" ;
                   rdfs:label "WorkRelationship"@en .
+
+
+###  http://purl.org/lis590od/Fall17/OrgRel#OrganizationRelationship
+<http://purl.org/lis590od/Fall17/OrgRel#OrganizationRelationship> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2000/10/swap/pim/contact#Person
+<http://www.w3.org/2000/10/swap/pim/contact#Person> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
+geo:SpatialThing rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+foaf:Agent rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+foaf:Organization rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class .
 
 
 #################################################################

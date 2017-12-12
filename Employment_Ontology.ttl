@@ -20,6 +20,8 @@
 @prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix communityties: <http://purl.org/lis590OD/Fall17/CommunityTies> .
+@prefix exOffenderEmp: <http://purl.org/lis590OD/Fall17/ExOffenderEmp> .
 @base <http://purl.org/lis590OD/Fall17/Employment_Ontology> .
 
 <http://purl.org/lis590OD/Fall17/Employment_Ontology> rdf:type owl:Ontology .
@@ -234,6 +236,25 @@ event:place rdf:type owl:ObjectProperty ;
 
 ###  http://purl.org/NET/c4dm/event.owl#Event
 event:Event rdf:type owl:Class .
+
+
+###  http://purl.org/lis590OD/Fall17/CommunityTies#Client
+<http://purl.org/lis590OD/Fall17/CommunityTies#Client> rdf:type owl:Class ;
+                                                       owl:equivalentClass [ rdf:type owl:Class ;
+                                                                             owl:unionOf ( :Employee
+                                                                                           :Student
+                                                                                         )
+                                                                           ] .
+
+
+###  http://purl.org/lis590OD/Fall17/CommunityTies#Employer
+<http://purl.org/lis590OD/Fall17/CommunityTies#Employer> rdf:type owl:Class ;
+                                                         owl:equivalentClass :EmployingOrganization .
+
+
+###  http://purl.org/lis590OD/Fall17/CommunityTies#School
+<http://purl.org/lis590OD/Fall17/CommunityTies#School> rdf:type owl:Class ;
+                                                       owl:equivalentClass :School .
 
 
 ###  http://purl.org/lis590OD/Fall17/Employment_Ontology#Employee
